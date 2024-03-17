@@ -8,6 +8,9 @@
 
 namespace simple_dds
 {
+/**
+ * Topic is the most basic description of the data to be published and subscribed.
+ */
 class Topic: public Entity, public TopicDescription
 {
 public:
