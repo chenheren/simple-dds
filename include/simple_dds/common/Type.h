@@ -23,6 +23,8 @@ enum class ReturnCode_t: std::uint8_t
 
 using DomainId_t = std::uint32_t;
 
+using InstanceHandle_t = std::int32_t;
+
 struct Time_t
 {
     long sec;
