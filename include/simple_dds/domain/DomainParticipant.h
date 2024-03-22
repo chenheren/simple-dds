@@ -1,15 +1,16 @@
 #pragma once
 
-#include <simple_dds/common/Type.h>
-#include <simple_dds/common/Entity.h>
+#include <simple_dds/core/base/Type.h>
+#include <simple_dds/core/base/Entity.h>
 #include <simple_dds/publisher/Publisher.h>
+#include <simple_dds/domain/DomainParticipantQos.h>
 
 namespace simple_dds
 {
 class DomainParticipant: public Entity
 {
 public:
-    ReturnCode_t set_qos(const std::vector<QosPolicy>& qos_list) override;
+    ReturnCode_t set_qos(const DomainParticipantQos& qos) override;
 
     ReturnCode_t set_qos(std::vector<QosPolicy>& qos_list) override;
 

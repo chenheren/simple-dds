@@ -2,8 +2,10 @@
 
 #include <memory>
 #include <vector>
-#include <simple_dds/common/Type.h>
+#include <simple_dds/core/base/Type.h>
+#include <simple_dds/core/status/StatusMask.h>
 #include <simple_dds/domain/DomainParticipant.h>
+#include <simple_dds/domain/DomainParticipantQos.h>
 #include <simple_dds/domain/DomainParticipantListener.h>
 
 namespace simple_dds
@@ -20,10 +22,12 @@ public:
         return instance;
     }
 
-    std::shared_ptr<DomainParticipant> create_participant(
+    DomainParticipant* create_participant(
         DomainId_t domain_id,
-        const std::vector<QosPolicy>& qos_list = {},
-        DomainParticipantListener* listener = nullptr);
+        const DomainParticipantQos& qos,
+        DomainParticipantListener* listener = nullptr,
+        const StatusMask& statusMask = StatusMask::all()
+        );
 
     ReturnCode_t delete_participant(DomainParticipant* participant);
 

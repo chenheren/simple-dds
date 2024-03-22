@@ -2,11 +2,11 @@
 
 #include <memory>
 #include <vector>
-#include <simple_dds/common/Type.h>
-#include <simple_dds/common/Status.h>
-#include <simple_dds/common/Listener.h>
-#include <simple_dds/common/QosPolicy.h>
-#include <simple_dds/common/StatusCondition.h>
+#include <simple_dds/core/base/Type.h>
+#include <simple_dds/core/base/Status.h>
+#include <simple_dds/core/base/Listener.h>
+#include <simple_dds/core/base/QosPolicy.h>
+#include <simple_dds/core/base/StatusCondition.h>
 
 namespace simple_dds
 {

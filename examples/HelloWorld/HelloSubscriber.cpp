@@ -1,19 +1,19 @@
 #include <atomic>
 #include <thread>
 #include <iostream>
-#include <simple_dds/common/Type.h>
-#include <simple_dds/domain/DomainParticipantFactory.h>
 #include <simple_dds/subcriber/Subscriber.h>
 #include <simple_dds/subcriber/DataReader.h>
 #include <simple_dds/subcriber/DataReaderListener.h>
+#include <simple_dds/domain/DomainParticipantFactory.h>
 
 class HelloSubscriber
 {
 public:
     HelloSubscriber()
     {
-        auto& factory = simple_dds::DomainParticipantFactory::GetInstance();
-        participant_ = factory.create_participant(0, );
+        auto& factory = simple_dds::DomainParticipantFactory::get_instance();
+        simple_dds::DomainParticipantQos participant_qos;
+        participant_ = factory.create_participant(0, participant_qos);
         subscriber_ = participant_->create_subscriber(qos, nullptr);
         topic_ = participant_->create_topic("HelloWorldTopic", "HelloWorld", tqos);
         reader_ = subscriber_->create_datareader(topic_, rqos, &listener_);
