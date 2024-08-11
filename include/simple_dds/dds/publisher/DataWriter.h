@@ -85,6 +85,10 @@ public:
 
     ReturnCode_t get_matched_subscriptions(
         std::vector<InstanceHandle_t>& subscription_handles);
+
+private:
+    class Impl;
+    Impl* impl_;
 };
 }
 }

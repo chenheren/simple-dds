@@ -4,6 +4,12 @@ namespace simple_dds
 {
 namespace dds
 {
+class DataWriter::Impl
+{
+public:
+
+};
+
 InstanceHandle_t DataWriter::register_instance(
     void* instance)
 {

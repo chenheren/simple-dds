@@ -50,7 +50,7 @@ Subscriber* DomainParticipant::create_subscriber(
     const std::vector<Status*>& mask)
 {
     std::lock_guard<std::mutex> lock(impl_->subscriber_mutex_);
-    auto ptr = new Subscriber();
+    auto ptr = new Subscriber(this);
     impl_->subscribers_.push_back(ptr);
     return ptr;
 }

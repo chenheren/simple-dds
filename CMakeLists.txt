@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(include)
 file(GLOB_RECURSE SRCS ${CMAKE_CURRENT_LIST_DIR}/src/*.cpp)
-add_library(simple_dds SHARED ${SRCS} )
+add_library(simple_dds SHARED ${SRCS} src/dds/subscriber/Datareader.cpp include/simple_dds/dds/subscriber/ReadCondition.h src/dds/subscriber/ReadCondition.cpp)
 target_include_directories(simple_dds INTERFACE $<INSTALL_INTERFACE:include>)
 target_link_libraries(simple_dds PUBLIC pthread)
 

@@ -4,18 +4,22 @@
 #include <simple_dds/dds/core/Entity.h>
 #include <simple_dds/dds/core/StatusKinds.h>
 #include <simple_dds/dds/topic/TopicDescription.h>
-#include <simple_dds/dds/subscriber/DataReader.h>
-#include <simple_dds/dds/subscriber/DataReaderListener.h>
 
 namespace simple_dds
 {
 namespace dds
 {
+class DataReader;
+class DataReaderListener;
 class DomainParticipant;
 
 class Subscriber: public Entity
 {
 public:
+
+     explicit Subscriber(
+         DomainParticipant* participant);
+
     DataReader* create_datareader(
         const TopicDescription* topic_description,
         const std::vector<QosPolicy>& qos_list,
@@ -25,7 +29,7 @@ public:
     ReturnCode_t delete_datareader(
         DataReader* data_reader);
 
-    DataReader lookup_datareader(
+    DataReader* lookup_datareader(
         const std::string& topic_name);
 
     ReturnCode_t begin_access();
@@ -54,6 +58,9 @@ public:
         std::vector<QosPolicy>& datareader_qos,
         const std::vector<QosPolicy>& topic_qos);
 
+private:
+    class Impl;
+    Impl* impl_;
 };
 }
 }

@@ -17,7 +17,13 @@ class StatusKinds
 public:
     const static std::uint8_t KindSize = 16;
 
-    StatusKinds(
+    StatusKinds()
+    : StatusKinds(0)
+    {
+
+    }
+
+    explicit StatusKinds(
         std::uint32_t mask)
     : value_(mask)
     {
@@ -26,7 +32,7 @@ public:
 
     inline static StatusKinds all()
     {
-        return {0xFFFF};
+        return StatusKinds(0xFFFF);
     }
 
 private:

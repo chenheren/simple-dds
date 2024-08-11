@@ -5,6 +5,7 @@
 #include <simple_dds/dds/subscriber/Subscriber.h>
 #include <simple_dds/dds/subscriber/DataReader.h>
 #include <simple_dds/dds/subscriber/DataReaderListener.h>
+#include <simple_dds/dds/domain/DomainParticipant.h>
 #include <simple_dds/dds/domain/DomainParticipantFactory.h>
 
 class HelloSubscriber

@@ -308,5 +308,33 @@ struct SubscriptionBuiltinTopicData
     TopicDataQosPolicy         topic_data;
     GroupDataQosPolicy         group_data;
 };
+
+struct OwnershipStrengthQosPolicy
+{
+    std::int32_t value;
+};
+
+struct PublicationBuiltinTopicData
+{
+    BuiltinTopicKey_t          key;
+    BuiltinTopicKey_t          participant_key;
+    std::string                topic_name;
+    std::string                type_name;
+    DurabilityQosPolicy        durability;
+    DurabilityServiceQosPolicy durability_service;
+    DeadlineQosPolicy          deadline;
+    LatencyBudgetQosPolicy     latency_budget;
+    LivelinessQosPolicy        liveliness;
+    ReliabilityQosPolicy       reliability;
+    LifespanQosPolicy          lifespan;
+    UserDataQosPolicy          user_data;
+    OwnershipQosPolicy         ownership;
+    OwnershipStrengthQosPolicy ownership_strength;
+    DestinationOrderQosPolicy  destination_order;
+    PresentationQosPolicy      presentation;
+    PartitionQosPolicy         partition;
+    TopicDataQosPolicy         topic_data;
+    GroupDataQosPolicy         group_data;
+};
 }
 }

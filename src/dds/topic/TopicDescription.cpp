@@ -4,6 +4,19 @@ namespace simple_dds
 {
 namespace dds
 {
+TopicDescription::TopicDescription()
+{
+
+}
+
+TopicDescription::TopicDescription(
+    std::string name,
+    std::string type_name,
+    DomainParticipant *participant)
+{
+
+}
+
 DomainParticipant *TopicDescription::get_participant()
 {
     return participant_;

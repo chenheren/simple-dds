@@ -15,6 +15,8 @@ class DomainParticipant;
 class TopicDescription
 {
 public:
+    TopicDescription();
+
     TopicDescription(
         std::string name,
         std::string type_name,
